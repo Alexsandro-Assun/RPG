@@ -6,10 +6,19 @@ public class Skills {
 		int FaiyaaArashi;
 		int Raitou;
 		int TotsukaTsurugi;
-		int Santouryuu;
-		int Critico;
+		int Santouryuu = 10;
+		double Critico;
 		
 		void Blizzard() {
 			cpuhp = Blizzard - cpuhp;
 		}
+		
+		
+		public void Santouryuu() {
+			cpuhp = Santouryuu - cpuhp;
+		} 
+		
+		
+		
+		
 }

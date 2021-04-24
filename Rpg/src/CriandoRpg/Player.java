@@ -12,7 +12,7 @@ public class Player {
 	public boolean ocultar;
 	
 	public Player(float hp, int arm, int mr, int ad, int ap, double crt) {
-		nome();
+		//nome();
 		this.HP = hp;
 		this.armadura = arm;
 		this.resisteciaMagica = mr;

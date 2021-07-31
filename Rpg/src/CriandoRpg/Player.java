@@ -20,6 +20,8 @@ public class Player {
 	private int raitou = 8;
 	private int ac = 1 ;
 	private int cont = 5;
+	private float vidaP;
+	private float rVidaP = (float) 0.5;
 
 
 	// metodos dos players
@@ -78,6 +80,7 @@ public class Player {
 			System.out.println((cont-1)+"/5 restantes");
 			hp = hp - (bakuhatsu * critico+(danoFisico+danoMagico));
 			cont--;
+			AnoYo();
 		}
 		
 		if (cont == 0) {
@@ -85,6 +88,19 @@ public class Player {
 		}
 	}
 
+	public void AnoYo() {
+		if(cont == 2) {
+			vidaP = hp;
+			vidaP = vidaP - (10/100*(1000 - vidaP));
+
+		}
+		if(cont == 1 ) {
+			vidaP = 1000 - vidaP;
+			System.out.println("Bakuhatsu casou 50% da vida perdida ("+vidaP*rVidaP+") de dano");
+			hp = hp - (50/100*(1000 - hp));
+		}
+	}
+	
 	public void TotsukaTsurugi() {
 		System.out.println("TotsukaTsurugi " + (totsukaTsurugi-armadura) + " de dano");
 		danoMagico += 9;
@@ -143,20 +159,37 @@ public class Player {
 		}
 
 		
-		if (raitou<128) {
+		if (raitou<256) {
 				raitou = raitou + raitou;
 				hp = hp - 0;
 		}
 
-		if(raitou == 128) {
+		if(raitou == 256) {
 			System.out.println("Raitou causou "+ (raitou-resisteciaMagica)+" de dano acumulado");
 			hp = hp - raitou + resisteciaMagica;
 			raitou = 8;
 		}
 	}
 
+
 	
 	// getters e setters
+
+	public int getCont() {
+		return cont;
+	}
+
+	public void setCont(int cont) {
+		this.cont = cont;
+	}
+
+	public float getVidaP() {
+		return vidaP;
+	}
+
+	public void setVidaP(float vidaP) {
+		this.vidaP = vidaP;
+	}
 
 	public int getAc() {
 		return ac;
@@ -275,7 +308,7 @@ public class Player {
 	}
 
 	public void setSantouryuu(int santouryuu) {
-		santouryuu = santouryuu;
+		this.santouryuu = santouryuu;
 	}
 
 }

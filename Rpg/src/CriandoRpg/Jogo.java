@@ -14,15 +14,15 @@ public class Jogo {
 		System.out.println("Digite o nome do jogador ");
 
 		Player p1 = new Player(900, 4, 3, 15, 5, (float) 1.5);
-		p1.nome = ler.nextLine();
+		p1.setNome(ler.nextLine());
 		p1.visivel();
 		p1.mostrarStatus();
 
 
 		Player cpu = new Player(1000, 5, 3, 15, 5, (float) 2.0);
-		cpu.nome = "CPU";
+		cpu.setNome("CPU");
 		
-		if(p1.nome.equals(cpu.nome)) {
+		if(p1.getNome().equals(cpu.getNome())) {
 			cpu.setHp(0);
 			
 		}
@@ -146,52 +146,52 @@ public class Jogo {
 
 			}
 			System.out.println("=======================");
-			System.out.println("|Turno do jogador: "+cpu.nome+"|");
+			System.out.println("|Turno do jogador: "+cpu.getNome()+"|");
 			System.out.println("=======================\n");
 
 			
 			switch(op2+r.nextInt(5)) {
 				case 1:{
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.Blizzard();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 				
 				case 2:{
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.Santouryuu();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 				
 				case 3:{
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.TotsukaTsurugi();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 				
 				case 4:{
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.FaiyaaArashi();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 				
 				case 5:{
 					p1.critico = cpu.critico;
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.Bakuhatsu();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 				
 				case 6:{
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.Raitou();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 				
 				default:{
-					System.out.print(cpu.nome+" usou ");
+					System.out.print(cpu.getNome()+" usou ");
 					p1.Raitou();
-					System.out.println("\n"+p1.nome+" HP restante :" + p1.getHp() + "\n");
+					System.out.println("\n"+p1.getNome()+" HP restante :" + p1.getHp() + "\n");
 				} break;
 			}
 		} 
